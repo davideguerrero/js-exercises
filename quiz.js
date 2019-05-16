@@ -4,18 +4,40 @@ var myQuestions = [
       answers: {
           a: 'Yes',
           b: 'No',
-          // c: '115'
       },
-      correctAnswer: 'Yes'
+      correctAnswer: 'a'
   },
   {
       question: "Zebras are black?",
       answers: {
           a: 'Yes',
           b: 'No',
-          // c: '10'
       },
-      correctAnswer: 'No'
+      correctAnswer: 'b'
+  },
+  {
+      question: "Cheetah is the fastest animal?",
+      answers: {
+          a: 'Yes',
+          b: 'No',
+      },
+      correctAnswer: 'a'
+  },
+  {
+      question: "Sharks are killers?",
+      answers: {
+          a: 'Yes',
+          b: 'No',
+      },
+      correctAnswer: 'b'
+  },
+  {
+      question: "Dogs are better than humas?",
+      answers: {
+          a: 'Yes',
+          b: 'No',
+      },
+      correctAnswer: 'a'
   }
 ];
 

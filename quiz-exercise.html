@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<!--  
+   Is it spring?
+  (true)
+
+  Is summer next?
+  (true)
+
+  Do cakes grow on tree?
+  (false)
+ -->
+
+<section class="quiz">
+  <article class="question" id="question-1" data-answer="true">
+   <h4>Is it spring?</h4>
+    <p>
+      <input type="radio" name="q1" value="true" id="q1t">
+      <label for="q1t">Yes</label>
+      <input type="radio" name="q1" value="false" id="q1f">
+      <label for="q1f">No</label>
+    </p>
+  </article>
+
+</section>
+
+<button class="submit" onclick="submitQuiz()">Submit your result</button>
+
+<!--   
+  question
+  correct answer
+
+  user choosen an answer (true or false)
+
+  compare u answer == c answer
+  save the current result
+
+  
+  next question
+
+  ---
+
+  answer all questions
+
+  submit quiz
+
+  compare all answers 
+
+  and give the result 
+-->
+
+
+
+
+  <script>
+    var answer = [true, true, false]
+
+    function submitQuiz() {
+
+      console.log(document.getElementById('question-1').dataset.answer);
+
+      console.log(document.getElementById('q1t').value);
+      console.log(document.getElementById('q1t').checked);
+
+/*       var correctAnswers
+      var totalQuestions
+      if ( radio1 == q1) {
+        correcrAnswer++
+      } */
+    }
+  </script>
+</body>
+</html>
