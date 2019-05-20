@@ -14,26 +14,15 @@
   <body>
 
     <h1>The Fastest Quiz</h1>
-    
-    <!--  
-      Is it spring?
-      (true)
-
-      Is summer next?
-      (true)
-
-      Do cakes grow on tree?
-      (false)
-    -->
 
     <section class="quiz">
       <article class="question" id="question-1" data-answer="true">
         <h4>Bears sleep 6 months in a row?</h4>
         <p>
           <input type="radio" name="q1" value="true" id="q1t">
-          <label id="green" for="q1t">Yes</label>
+          <label id="true" for="q1t">Yes</label>
           <input type="radio" name="q1" value="false" id="q1f">
-          <label for="q1f">No</label>
+          <label id="false" for="q1f">No</label>
         </p>
       </article>
 
@@ -93,33 +82,43 @@
     -->
 
     <script>
-      var answer = [true, false, true, false, true]
-      
-      document.getElementById("reset").style.display = "none";
-      
-      document.getElementById("question-1").innerHTML = "lightgreen";
 
-      function submitQuiz() {
+      var submitQuiz = document.getElementById("submit");
+      submitQuiz.addEventListener("click", colorAnswer);
 
-
-
-        // console.log(document.getElementById('question-1').dataset.answer);
-
-        // console.log(document.getElementById('q1t').value);
-        // console.log(document.getElementById('q1t').checked);
-        // console.log(document.getElementById('q2t').checked);
-        // console.log(document.getElementById('q3t').checked);
-        // console.log(document.getElementById('q4t').checked);
-        // console.log(document.getElementById('q5t').checked);
-
-
-      /* var correctAnswers
-        var totalQuestions
-        if ( radio1 == q1) {
-          correcrAnswer++
-        } */
-        
+      function colorAnswer() {
+        document.getElementById("question-1").style.color = "lightgreen";
       }
+      
+      var resetQuiz = document.getElementById("reset");
+      resetQuiz.addEventListener("click", reset);
+
+      function reset() {
+        document.getElementById('reset').style.display = 'none';
+      }
+
+      // document.getElementById("question-1").innerHTML = "lightgreen";
+
+      // function submitQuiz() {
+
+      //   console.log(document.getElementById('question-1').dataset.answer);
+
+      //   console.log(document.getElementById('q1t').value);
+      //   console.log(document.getElementById('q1t').checked);
+      //   console.log(document.getElementById('q2t').checked);
+      //   console.log(document.getElementById('q3t').checked);
+      //   console.log(document.getElementById('q4t').checked);
+      //   console.log(document.getElementById('q5t').checked);
+
+
+      // /* var correctAnswers
+      //   var totalQuestions
+      //   if ( radio1 == q1) {
+      //     correcrAnswer++
+      //   } */
+        
+      // }
+
     </script>
 
   </body>
