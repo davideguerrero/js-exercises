@@ -6,11 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="quiz.css">
+    <title>The Fastest Quiz</title>
 
   </head>
 
   <body>
+
+    <h1>The Fastest Quiz</h1>
     
     <!--  
       Is it spring?
@@ -25,33 +28,61 @@
 
     <section class="quiz">
       <article class="question" id="question-1" data-answer="true">
-      <h4>Is it spring?</h4>
+        <h4>Bears sleep 6 months in a row?</h4>
         <p>
           <input type="radio" name="q1" value="true" id="q1t">
-          <label for="q1t">Yes</label>
+          <label id="green" for="q1t">Yes</label>
           <input type="radio" name="q1" value="false" id="q1f">
           <label for="q1f">No</label>
         </p>
       </article>
 
+      <!-- <article class="question" id="question-2" data-answer="false">
+        <h4>Zebras are black?</h4>
+        <p>
+          <input type="radio" name="q2" value="false" id="q2f">
+          <label for="q2f">Yes</label>
+          <input type="radio" name="q2" value="true" id="q2t">
+          <label for="q2t">No</label>
+        </p>
+      </article>
+
+      <article class="question" id="question-3" data-answer="true">
+        <h4>Cheetah is the fastest animal?</h4>
+        <p>
+          <input type="radio" name="q3" value="true" id="q3t">
+          <label for="q3t">Yes</label>
+          <input type="radio" name="q3" value="false" id="q3f">
+          <label for="q3f">No</label>
+        </p>
+      </article>
+
+      <article class="question" id="question-4" data-answer="false">
+        <h4>Sharks are killers?</h4>
+        <p>
+          <input type="radio" name="q4" value="false" id="q4f">
+          <label for="q4f">Yes</label>
+          <input type="radio" name="q4" value="true" id="q4t">
+          <label for="q4t">No</label>
+        </p>
+      </article>
+
+      <article class="question" id="question-5" data-answer="true">
+        <h4>Dogs are better than humas?</h4>
+        <p>
+          <input type="radio" name="q5" value="true" id="q5t">
+          <label for="q5t">Yes</label>
+          <input type="radio" name="q5" value="false" id="q5f">
+          <label for="q5f">No</label>
+        </p>
+      </article> -->
+
     </section>
 
-    <button class="submit" onclick="submitQuiz()">Submit your result</button>
+    <button class="submit" onclick="submitQuiz()">Submit your Result</button>
+    <button id="reset" class="reset" onclick="resetQuiz()">Try Again!</button>
 
     <!--   
-      question
-      correct answer
-
-      user choosen an answer (true or false)
-
-      compare u answer == c answer
-      save the current result
-
-      
-      next question
-
-      ---
-
       answer all questions
 
       submit quiz
@@ -62,14 +93,25 @@
     -->
 
     <script>
-      var answer = [true, true, false]
+      var answer = [true, false, true, false, true]
+      
+      document.getElementById("reset").style.display = "none";
+      
+      document.getElementById("question-1").innerHTML = "lightgreen";
 
       function submitQuiz() {
 
-        console.log(document.getElementById('question-1').dataset.answer);
 
-        console.log(document.getElementById('q1t').value);
-        console.log(document.getElementById('q1t').checked);
+
+        // console.log(document.getElementById('question-1').dataset.answer);
+
+        // console.log(document.getElementById('q1t').value);
+        // console.log(document.getElementById('q1t').checked);
+        // console.log(document.getElementById('q2t').checked);
+        // console.log(document.getElementById('q3t').checked);
+        // console.log(document.getElementById('q4t').checked);
+        // console.log(document.getElementById('q5t').checked);
+
 
       /* var correctAnswers
         var totalQuestions
