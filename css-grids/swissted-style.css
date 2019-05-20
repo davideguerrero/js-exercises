@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.025em;
+
+  color: #DFE2D9;
+}
+
+.container {
+  display: grid;
+  max-width: 716px;
+  max-height: 1008px;
+  margin: 0 auto;
+
+  grid-template-columns: 1fr 1fr 1fr 1.75fr 2.25fr 1fr 1.5fr;
+
+  grid-template-rows: 3fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr 2fr;
+
+  background-color: #ED047D;
+}
+
+.one {
+  grid-column-start: 1;
+  grid-column-end: 8;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  
+  grid-row-start: 1;
+  grid-row-end: 9;
+
+  background-color: #DFE2D9;
+}
+
+.three,
+.four,
+.five,
+.six {
+  display: flex;
+  align-items: center;
+}
+
+.three {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.four {
+  grid-column-start: 5;
+  grid-column-end: 6;
+
+  margin-left: 2em;
+}
+
+.five {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  
+  font-weight: 900;
+  font-size: 5em;
+
+  color: #00000A;
+}
+
+.six {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  
+  font-size: 1.5em;
+  
+  color: #00000A;
+}
+
+.seven {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  
+  background-color: #00000A;
+  
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.eight {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  background-color: #00000A;
+}
+
+.nine {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  
+  grid-row-start: 6;
+  grid-row-end: 7;
+
+  background-color: #00000A;
+}
+
+.ten {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  
+  grid-row-start: 6;
+  grid-row-end: 10;
+
+  z-index: 1;
+  
+  background-color: #00000A;
+}
+
+.eleven {
+  grid-column-start: 2;
+  grid-column-end: 8;
+  
+  grid-row-start: 8;
+  grid-row-end: 9;
+  
+  background-color: #DFE2D9;
+}
+
+.twelf {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  
+  grid-row-start: 7;
+  grid-row-end: 10;
+  
+  margin-left: -3.15em;
+  
+  z-index: 1;
+  
+  background-color: #ED047D;
+}
+
+.thirteen {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  
+  grid-row-start: 8;
+  grid-row-end: 9;
+  
+  margin-left: -3.15em;
+  
+  z-index: 1;
+
+  background-color: #DFE2D9;
+}
