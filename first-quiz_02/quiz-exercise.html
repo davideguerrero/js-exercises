@@ -20,9 +20,9 @@
         <h4>Bears sleep 6 months in a row?</h4>
         <p>
           <input type="radio" name="q1" value="true" id="q1t">
-          <label id="true" for="q1t">Yes</label>
+          <label id="correctAnswer" for="q1t">Yes</label>
           <input type="radio" name="q1" value="false" id="q1f">
-          <label id="false" for="q1f">No</label>
+          <label id="wrongAnswer" for="q1f">No</label>
         </p>
       </article>
 
@@ -68,7 +68,7 @@
 
     </section>
 
-    <button class="submit" onclick="submitQuiz()">Submit your Result</button>
+    <button class="submit" id="submit" onclick="submitQuiz()">Submit your Result</button>
     <button id="reset" class="reset" onclick="resetQuiz()">Try Again!</button>
 
     <!--   
