@@ -77,9 +77,3 @@ function updateTheMessage(messageText, messageSuccess) {
   }
 
 }
-
-/*  
-  - The undo button should remove last name added
-  - Give you a message about it
-  - "List all the names" button should print all the names in an unordered list
-*/
