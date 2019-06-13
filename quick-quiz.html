@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>David Quick Exercise</title>
+</head>
+<body>
+
+  <!--  Write down your name please (and save this document as YourName-quick-exercise.html):
+        > David
+   -->
+
+   <h1>Quick exercise</h1>
+
+  <!--  Please answer these questions: 
+  
+        What does JS stand for?
+        > JavaScript
+
+        You guessed it! It stands for Java. Is it case sensitive? 
+        > Yes
+
+        Can you list some Data Types please.
+        > String,number,boolean,array,object...
+
+        Where does it get executed?
+        > In the browser
+
+        Is it a server or client-side language?
+        > Client-side
+  -->
+
+  <!--  Thank you now solve the following task. -->
+
+  <button id="myButton">Give a class to the article</button>
+
+  <article id="myArticle" class="expanded">
+    <h2>Dummy article</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+  </article>
+
+  <script>
+    // select the two elements and store them in two variables
+    var myButton = document.getElementById('myButton');
+    var myArticle = document.getElementById('myArticle');
+    // listen for the button click and execute the toggleClass function
+    myButton.addEventListener('click',toggleClass); 
+    // write the toggleClass function that toggles the class expanded on the article element
+    function toggleClass() {
+      myArticle.classList.toggle('expanded');
+    }
+
+    // Write a script that will add or remove the class expanded
+    // from the article element when one presses the button
+  </script>
+
+</body>
+</html>
