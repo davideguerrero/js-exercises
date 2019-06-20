@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Navigation</title>
+
+  </head>
+
+  <style>
+    body { transition: background-color 1s ease; font-size: 5em;}
+    ul {list-style: none;}
+    a, a:link { color: #757575; text-decoration: none;}
+    a.main-nav-link-active { text-decoration: underline; text-shadow: 2.5px 2.5px 0 rgba(255,255,255,1);}
+  </style>
+
+  <body>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a class="main-nav-link" href="#" data-color="#ff0000">Red</a></li>
+        <li><a class="main-nav-link" href="#" data-color="#00ff00">Green</a></li>
+        <li><a class="main-nav-link" href="#" data-color="#0000ff">Blue</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      // store all the link
+      var links = document.getElementsByClassName('main-nav-link');
+      // calculate the lenght of the array
+      var numberOflinks = links.length;
+      // a variable to store the last link clicked
+      var lastLinkClicked;
+      
+      // loop through all the links
+      // variable, start in; not more than 20; increment +1
+      for ( var n = 0; n < numberOflinks; n++ ) {
+        // links[0] = 1
+        // links[1] = 2
+        // links[2] = 3
+        links[n].addEventListener('click', colorMeBlue);
+      }
+
+      function colorMeBlue() {
+        // check if the variable is not undefined
+        if (lastLinkClicked) {
+          lastLinkClicked.classList.remove('main-nav-link-active');
+        }
+        // console.log(this);
+        this.classList.add('main-nav-link-active');
+        // store the last link clicked
+        lastLinkClicked = this;
+
+        // color the body
+        console.log(this.dataset.color);
+        document.body.style.backgroundColor = this.dataset.color;
+      }
+
+      // when I click another link, it should get blue
+      // and the previous one turn back to pink
+    </script>
+    
+  </body>
+
+</html>
