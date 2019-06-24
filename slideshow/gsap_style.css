@@ -6,6 +6,10 @@ body {
   font-family: 'Taviraj', serif;
 }
 
+article {
+  min-height: 642px;
+}
+
 .imgSlides {
   display: grid;
   grid-template-columns: .75fr 1fr;
@@ -88,5 +92,9 @@ a:hover {
 }
 
 .button:hover {
+  background-color: #2896E0;
+}
+
+.button-active {
   background-color: #2896E0;
 }
