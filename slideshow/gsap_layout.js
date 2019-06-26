@@ -6,6 +6,9 @@ function nextSlideOne() {
   document.getElementById('dolphin').style.display = 'grid';
   document.getElementById('palm').style.display = 'none';
   document.getElementById('earth').style.display = 'none';
+
+  TweenMax.from('#dolphin .dolphin', 2, { x: -1000, ease: Elastic.easeOut});
+  TweenMax.from('#dolphin .bg-water', 2, { y: 1000, ease: Elastic.easeOut});
 }
 
 var showSlideTwo = document.getElementById('nextSlideTwo');
@@ -16,6 +19,9 @@ function nextSlideTwo() {
   document.getElementById('dolphin').style.display = 'none';
   document.getElementById('palm').style.display = 'grid';
   document.getElementById('earth').style.display = 'none';
+
+  TweenMax.from('#palm .dolphin', 2, { x: -1000, ease: Elastic.easeOut});
+  TweenMax.from('#palm .bg-water', 2, { y: 1000, ease: Elastic.easeOut});
 }
 
 var showSlideThree = document.getElementById('nextSlideThree');
@@ -26,6 +32,9 @@ function nextSlideThree() {
   document.getElementById('dolphin').style.display = 'none';
   document.getElementById('palm').style.display = 'none';
   document.getElementById('earth').style.display = 'grid';
+
+  TweenMax.from('#earth .dolphin', 2, { x: -1000, ease: Elastic.easeOut});
+  TweenMax.from('#earth .bg-water', 2, { y: 1000, ease: Elastic.easeOut});
 }
 
 // store all the link
@@ -59,5 +68,3 @@ function hoverColor() {
   earth.style.backgroundColor = this.dataset.color;
 }
 
-// when I click another link, it should get blue
-// and the previous one turn back to pink
