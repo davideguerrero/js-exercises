@@ -7,8 +7,8 @@ function nextSlideOne() {
   document.getElementById('palm').style.display = 'none';
   document.getElementById('earth').style.display = 'none';
 
-  TweenMax.from('#dolphin .dolphin', 2, { x: -1000, ease: Elastic.easeOut});
-  TweenMax.from('#dolphin .bg-water', 2, { y: 1000, ease: Elastic.easeOut});
+  TweenMax.from('#dolphin .dolphin', 2, { x: -500, ease: Elastic.easeOut});
+  TweenMax.from('#dolphin .bg-water', 2, { y: 500, ease: Elastic.easeOut});
 }
 
 var showSlideTwo = document.getElementById('nextSlideTwo');
@@ -20,8 +20,8 @@ function nextSlideTwo() {
   document.getElementById('palm').style.display = 'grid';
   document.getElementById('earth').style.display = 'none';
 
-  TweenMax.from('#palm .dolphin', 2, { x: -1000, ease: Elastic.easeOut});
-  TweenMax.from('#palm .bg-water', 2, { y: 1000, ease: Elastic.easeOut});
+  TweenMax.from('#palm .dolphin', 2, { x: -500, ease: Elastic.easeOut});
+  TweenMax.from('#palm .bg-water', 2, { y: 500, ease: Elastic.easeOut});
 }
 
 var showSlideThree = document.getElementById('nextSlideThree');
@@ -33,8 +33,8 @@ function nextSlideThree() {
   document.getElementById('palm').style.display = 'none';
   document.getElementById('earth').style.display = 'grid';
 
-  TweenMax.from('#earth .dolphin', 2, { x: -1000, ease: Elastic.easeOut});
-  TweenMax.from('#earth .bg-water', 2, { y: 1000, ease: Elastic.easeOut});
+  TweenMax.from('#earth .dolphin', 2, { x: -500, ease: Elastic.easeOut});
+  TweenMax.from('#earth .bg-water', 2, { y: 500, ease: Elastic.easeOut});
 }
 
 // store all the link
@@ -68,3 +68,15 @@ function hoverColor() {
   earth.style.backgroundColor = this.dataset.color;
 }
 
+// ----------------------------------------------------------
+
+function fadeOut() {
+  // check if the variable is not undefined
+  if (lastLinkClicked) {
+    lastLinkClicked.classList.add('#dolphin .imgSlides');
+  }
+  // console.log(this);
+  this.classList.remove('#dolphin .imgSlides');
+  // store the last link clicked
+  lastLinkClicked = this;
+}
