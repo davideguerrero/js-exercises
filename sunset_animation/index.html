@@ -16,9 +16,9 @@
     <div class="container">
       <img class="bg" src="sunset-bg-01.svg" alt="">
       <img class="sun" src="sunset-sun-01.svg" alt="">
-      <img class="mountain_back" src="sunset-mountain_back-01.svg" alt="">
+      <!-- <img class="mountain_back" src="sunset-mountain_back-01.svg" alt="">
       <img class="mountain_front"  src="sunset-mountain_front-01.svg" alt="">
-      <!-- <img class="mountain_front_shadow" src="sunset-mountain_front_shadow-01.svg" alt="">
+      <img class="mountain_front_shadow" src="sunset-mountain_front_shadow-01.svg" alt="">
       <img class="trees" src="sunset-trees-01.svg" alt="">
       <img class="trees_shadow" src="sunset-trees_shadow-01.svg" alt="">
       <img class="ground" src="sunset-ground-01.svg" alt="">
@@ -29,8 +29,29 @@
     </div>
     
     <script>
-    
+      // const sun = document.getElementsByClassName('.sun');
+      // const mountainBack = document.getElementsByClassName('.mountain_back');
+      // const mountainFront = document.getElementsByClassName('.mountain_front');
+      // const mountainFrontShadow = document.getElementsByClassName('.mountain_front_shadow');
+      // const trees = document.getElementsByClassName('.trees');
+      // const treesShadow = document.getElementsByClassName('.trees_shadow');
+      // const ground = document.getElementsByClassName('.ground');
+      // const groundReflectTop = document.getElementsByClassName('.ground_reflect_top');
+      // const groundReflectBottom = document.getElementsByClassName('.ground_reflect_bottom');
+      // const cloudLeft = document.getElementsByClassName('.cloud_left');
+      // const cloudRight = document.getElementsByClassName('.cloud_right');
+      
+      const bg = document.querySelector('.bg');
+      bg.addEventListener('mouseover', bgDark);
+
+      function bgDark() {
+        TweenMax.from('.bg', 5, {})
+      }
+
+
     </script>
+    <script src="TweenMax.js"></script>
+
   </body>
 
 </html>
