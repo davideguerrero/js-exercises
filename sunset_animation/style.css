@@ -2,12 +2,29 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 .container {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }
 
 img {
   position: absolute;
+}
+
+.bg {
+}
+
+.sun {
+  justify-self: flex-end;
+  max-width: 300px;
+  max-height: 150px;
+}
+
+.mountain_back {
 }
 
