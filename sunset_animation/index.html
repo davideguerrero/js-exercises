@@ -14,22 +14,34 @@
   <body>
 
     <div class="container">
-      <img class="bg" src="sunset-bg-01.svg" alt="">
-      <img class="sun" src="sunset-sun-01.svg" alt="">
-      <!-- <img class="mountain_back" src="sunset-mountain_back-01.svg" alt="">
-      <img class="mountain_front"  src="sunset-mountain_front-01.svg" alt="">
-      <img class="mountain_front_shadow" src="sunset-mountain_front_shadow-01.svg" alt="">
-      <img class="trees" src="sunset-trees-01.svg" alt="">
-      <img class="trees_shadow" src="sunset-trees_shadow-01.svg" alt="">
-      <img class="ground" src="sunset-ground-01.svg" alt="">
-      <img class="ground_reflect_top" src="sunset-ground_reflect_top-01.svg" alt="">
-      <img class="ground_reflect_bottom" src="sunset-ground_reflect_bottom-01.svg" alt="">
-      <img class="cloud_left" src="sunset-cloud_left-01.svg" alt="">
-      <img class="cloud_right" src="sunset-cloud_right-01.svg" alt=""> -->
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
+    <style type="text/css">
+      .st0{fill:url(#SVGID_1_);}
+      .st1{fill:url(#SVGID_2_);}
+      .st2{fill:#CE1E1E;}
+      .st3{fill:#FABE4E;}
+      .st4{fill:#431C31;}
+      .st5{fill:url(#SVGID_3_);}
+      .st6{fill:#F5A100;}
+      .st7{fill:url(#SVGID_4_);}
+      .st8{fill:#1D0A1E;}
+     </style>
+     <g id="BACKGROUND_1">
+     </g>
+     <g id="BACKGROUND_2">
+       <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="369.1007" y1="-66.209" x2="377.081" y2="361.5427">
+         <stop  offset="0" style="stop-color:#E54717"/>
+         <stop  offset="1" style="stop-color:#F1AB3C"/>
+       </linearGradient>
+       <polygon class="st0" points="0,0 750,0 750,500 0,500" x= "200px"/>
+     </g>
+     </svg>
     </div>
     
     <script>
-      // const sun = document.getElementsByClassName('.sun');
+      const bg = document.querySelector('.bg');
+      const sun = document.querySelector('.sun');
       // const mountainBack = document.getElementsByClassName('.mountain_back');
       // const mountainFront = document.getElementsByClassName('.mountain_front');
       // const mountainFrontShadow = document.getElementsByClassName('.mountain_front_shadow');
@@ -41,13 +53,11 @@
       // const cloudLeft = document.getElementsByClassName('.cloud_left');
       // const cloudRight = document.getElementsByClassName('.cloud_right');
       
-      const bg = document.querySelector('.bg');
-      bg.addEventListener('mouseover', bgDark);
+      sun.addEventListener('click', showSun);
 
-      function bgDark() {
-        TweenMax.from('.bg', 5, {})
+      function showSun() {
+        TweenMax.to('.sun', 1, {y: -100});
       }
-
 
     </script>
     <script src="TweenMax.js"></script>
