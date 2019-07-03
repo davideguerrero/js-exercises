@@ -14,49 +14,58 @@
   <body>
 
     <div class="container">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
-    <style type="text/css">
-      .st0{fill:url(#SVGID_1_);}
-      .st1{fill:url(#SVGID_2_);}
-      .st2{fill:#CE1E1E;}
-      .st3{fill:#FABE4E;}
-      .st4{fill:#431C31;}
-      .st5{fill:url(#SVGID_3_);}
-      .st6{fill:#F5A100;}
-      .st7{fill:url(#SVGID_4_);}
-      .st8{fill:#1D0A1E;}
-     </style>
-     <g id="BACKGROUND_1">
-     </g>
-     <g id="BACKGROUND_2">
-       <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="369.1007" y1="-66.209" x2="377.081" y2="361.5427">
-         <stop  offset="0" style="stop-color:#E54717"/>
-         <stop  offset="1" style="stop-color:#F1AB3C"/>
-       </linearGradient>
-       <polygon class="st0" points="0,0 750,0 750,500 0,500" x= "200px"/>
-     </g>
-     </svg>
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
+      <style type="text/css">
+        .st0{fill:url(#SVGID_1_);}
+        .st1{fill:#FABE4E;}
+        .st2{fill:#431C31;}
+        .st3{fill:#CE1E1E;}
+        .st4{fill:#1D0A1E;}
+        .st5{fill:#F5A100;}
+      </style>
+      <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="375" y1="500" x2="375" y2="-9.094947e-13">
+        <stop  offset="0" style="stop-color:#F1AB3C"/>
+        <stop  offset="1" style="stop-color:#E54717"/>
+      </linearGradient>
+
+      <rect id="bg" class="st0" width="750" height="500"/>
+      <circle id="sun" class="st1" cx="375.5" cy="350.5" r="87.5"/>
+      <rect id="water" y="351" class="st2" width="750" height="150"/>
+      <polygon id="mountain_left" class="st3" points="0,351 0,226 45,181 143,279 179.5,242.5 326,351 "/>
+      <polygon id="mountain_right" class="st3" points="750,351 750,226 705,181 607,279 570.5,242.5 424,351 "/>
+      <polygon id="tree_left" class="st4" points="79.9,351 109.9,245.9 139.1,351 161,306 182.3,351 207,220 239.8,351 "/>
+      <polygon id="tree_right" class="st4" points="509.9,351 539.9,245.9 569.1,351 591,306 612.3,351 637,220 669.8,351 "/>
+      <path id="cloud_left" class="st1" d="M212.5,117H75.3c-6.6,0-12,5.4-12,12v0c0,2.3,0.6,4.4,1.8,6.2h-9.2c-5.5,0-9.9,4.5-9.9,9.9v0
+        c0,5.5,4.5,9.9,9.9,9.9h141.3c5.5,0,9.9-4.5,9.9-9.9v0c0-1.5-0.3-2.9-0.9-4.1h6.3c6.6,0,12-5.4,12-12v0
+        C224.4,122.4,219,117,212.5,117z"/>
+      <path id="cloud_right" class="st1" d="M689,108h-33v-7c0-6.6-5.4-12-12-12h-9c0-6.6-5.4-12-12-12H436c-6.6,0-12,5.4-12,12c0,6.6,5.4,12,12,12h19v7
+        c0,6.6,5.4,12,12,12h23c0,6.6,5.4,12,12,12h187c6.6,0,12-5.4,12-12C701,113.4,695.6,108,689,108z"/>
+      <path id="water_reflect_01" class="st5" d="M521.5,370h-292c-1.9,0-3.5-1.6-3.5-3.5l0,0c0-1.9,1.6-3.5,3.5-3.5h292c1.9,0,3.5,1.6,3.5,3.5l0,0
+        C525,368.4,523.4,370,521.5,370z"/>
+      <path id="water_reflect_02" class="st1" d="M480.5,383h-210c-1.9,0-3.5-1.6-3.5-3.5l0,0c0-1.9,1.6-3.5,3.5-3.5h210c1.9,0,3.5,1.6,3.5,3.5l0,0
+        C484,381.4,482.4,383,480.5,383z"/>
+      </svg>
     </div>
     
     <script>
-      const bg = document.querySelector('.bg');
-      const sun = document.querySelector('.sun');
-      // const mountainBack = document.getElementsByClassName('.mountain_back');
-      // const mountainFront = document.getElementsByClassName('.mountain_front');
-      // const mountainFrontShadow = document.getElementsByClassName('.mountain_front_shadow');
-      // const trees = document.getElementsByClassName('.trees');
-      // const treesShadow = document.getElementsByClassName('.trees_shadow');
-      // const ground = document.getElementsByClassName('.ground');
-      // const groundReflectTop = document.getElementsByClassName('.ground_reflect_top');
-      // const groundReflectBottom = document.getElementsByClassName('.ground_reflect_bottom');
-      // const cloudLeft = document.getElementsByClassName('.cloud_left');
-      // const cloudRight = document.getElementsByClassName('.cloud_right');
+      const bg = document.getElementById('bg');
+      const sun = document.getElementById('sun');
+      const mountainLeft = document.getElementById('mountain_left');
+      const mountainRight = document.getElementById('mountain_right');
+      const treeLeft = document.getElementById('tree_left');
+      const treeRight = document.getElementById('tree_right');
+      const water = document.getElementById('water');
+      const waterReflect01 = document.getElementById('water_reflect_01');
+      const waterReflect02 = document.getElementById('water_reflect_02');
+      const cloudLeft = document.getElementById('cloud_left');
+      const cloudRight = document.getElementById('cloud_right');
       
-      sun.addEventListener('click', showSun);
+      bg.addEventListener('mouseover', bgDay);
 
-      function showSun() {
-        TweenMax.to('.sun', 1, {y: -100});
+      function bgDay() {
+        TweenMax.to('#bg', 2, {fill: '#000000'})
+        TweenMax.to('#sun', 2, {y: -200, scale: .5, fill: '#ffffff'})
       }
 
     </script>

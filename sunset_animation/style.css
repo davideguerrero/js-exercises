@@ -7,35 +7,12 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
   overflow: hidden;
   margin: 0 auto;
   max-width: 750px;
   max-height: 500px;
 }
 
-img {
-  position: absolute;
-}
-
-.bg {
-  max-width: 750px;
-  max-height: 500px;
-}
-
-.sun {
-  top: 600px;
-  max-width: 200px;
-  max-height: 100px;
-}
-
-.cloud_left {
-  max-width: 150px;
-  max-height: 100px;
-}
-.cloud_right {
-  max-width: 200px;
-  max-height: 100px;
+#bg {
+  transition: 10s;
 }
