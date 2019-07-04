@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="David Encalada Guerrero">
+    <meta name="description" content="Mondrian ">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Encalada Mondrian Paint</title>
+
+    <style>
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin-top: 100px;
+      }
+
+      #container {
+        overflow: hidden;
+        margin: 0 auto;
+        max-width: 1024px;
+        height: 768px;
+        
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+        border: 10px solid #000000;
+        background-color: #000000;
+      }
+
+      .one,
+      .six,
+      .seven,
+      .eight,
+      .nine,
+      .ten,
+      .thirteen,
+      .fourteen,
+      .fifteen,
+      .seventeen,
+      .twenty-one,
+      .twenty-two {
+        background-color: #FFFFFF;
+      }
+
+      .one {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .two,
+      .five,
+      .eighteen,
+      .twenty {
+        background-color: #FFFF00;
+      }
+
+      .two {
+        grid-column: 2/4;
+        grid-row: 1/2;
+      }
+
+      .three,
+      .eleven,
+      .nineteen {
+        background-color: #FF0000;
+      }
+
+      .three {
+        grid-column: 4/7;
+        grid-row: 1/2;
+      }
+
+      .four,
+      .twelve,
+      .sixteen {
+        background-color: #0000FF;
+      }
+
+      .four {
+        grid-column: 7/11;
+        grid-row: 1/2;
+      }
+
+      .five {
+        grid-column: 11/12;
+        grid-row: 1/2;
+      }
+
+      .six {
+        grid-column: 12/13;
+        grid-row: 1/2;
+      }
+
+      .seven {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .eight {
+        grid-column: 2/4;
+        grid-row: 2/3;
+      }
+
+      .nine {
+        grid-column: 4/7;
+        grid-row: 2/3;
+      }
+
+      .ten {
+        grid-column: 7/8;
+        grid-row: 2/3;;
+      }
+
+      .eleven {
+        grid-column: 8/11;
+        grid-row: 2/3;
+      }
+
+      .twelve {
+        grid-column: 11/12;
+        grid-row: 2/3;
+      }
+
+      .thirteen {
+        grid-column: 12/13;
+        grid-row: 2/4;
+      }
+
+      .fourteen {
+        grid-column: 1/2;
+        grid-row: 3/5;
+      }
+
+      .fifteen {
+        grid-column: 2/4;
+        grid-row: 3/4;
+      }
+
+      .sixteen {
+        grid-column: 4/8;
+        grid-row: 3/4;
+      }
+
+      .seventeen {
+        grid-column: 8/11;
+        grid-row: 3/4;
+      }
+
+      .eighteen {
+        grid-column: 11/12;
+        grid-row: 3/4;
+      }
+
+      .nineteen {
+        grid-column: 2/4;
+        grid-row: 4/5;
+      }
+
+      .twenty {
+        grid-column: 4/8;
+        grid-row: 4/5;
+      }
+
+      .twenty-one {
+        grid-column: 8/12;
+        grid-row: 4/5;
+      }
+
+      .twenty-two {
+        grid-column: 12/13;
+        grid-row: 4/5;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="container">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+      <div class="four"></div>
+      <div class="five"></div>
+      <div class="six"></div>
+      <div class="seven"></div>
+      <div class="eight"></div>
+      <div class="nine"></div>
+      <div class="ten"></div>
+      <div class="eleven"></div>
+      <div class="twelve"></div>
+      <div class="thirteen"></div>
+      <div class="fourteen"></div>
+      <div class="fifteen"></div>
+      <div class="sixteen"></div>
+      <div class="seventeen"></div>
+      <div class="eighteen"></div>
+      <div class="nineteen"></div>
+      <div class="twenty"></div>
+      <div class="twenty-one"></div>
+      <div class="twenty-two"></div>
+    </div>
+    
+    <script src="TweenMax.js"></script>
+    <script>
+      const oneSquare = document.getElementsByClassName('one');
+
+      oneSquare.addEventListener(changeSquare());
+
+      function changeSquare() {
+        // top
+        TweenMax.from('.one', 1, {delay: 2, x: -100})
+        TweenMax.to('.one', 1, {delay: 3, backgroundColor: '#FF0000'})
+
+        TweenMax.from('.two', 1, {delay: 2, y: -200})
+        TweenMax.to('.two', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.three', 1, {delay: 2, y: 750})
+        TweenMax.to('.three', 1, {delay: 3, backgroundColor: '#FFFF00'})
+
+        TweenMax.from('.four', 1, {delay: 2, x: 500})
+        TweenMax.to('.four', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.five', 1, {delay: 2, y: -200})
+        TweenMax.to('.five', 1, {delay: 3, backgroundColor: '#0000FF'})
+
+        TweenMax.from('.six', 1, {delay: 2, x: 200})
+        TweenMax.to('.six', 1, {delay: 3, backgroundColor: '#FFFF00'})
+
+        // second
+        TweenMax.from('.seven', 1, {delay: 2, x: 1050})
+        TweenMax.to('.seven', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.eight', 1, {delay: 2, x: -300})
+        TweenMax.to('.eight', 1, {delay: 3, backgroundColor: '#FFFF00'})
+
+        TweenMax.from('.nine', 1, {delay: 2, y: -400})
+        TweenMax.to('.nine', 1, {delay: 3, backgroundColor: '#FF0000'})
+
+        TweenMax.from('.ten', 1, {delay: 2, y: -750})
+        TweenMax.to('.ten', 1, {delay: 3, backgroundColor: '#FFFF00'})
+
+        TweenMax.from('.eleven', 1, {delay: 2, y: 600})
+        TweenMax.to('.eleven', 1, {delay: 3, backgroundColor: '#0000FF'})
+
+        TweenMax.from('.twelve', 1, {delay: 2, x: 200})
+        TweenMax.to('.twelve', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.thirteen', 1, {delay: 2, y: -575})
+        TweenMax.to('.thirteen', 1, {delay: 3, backgroundColor: '#FF0000'})
+
+        // third
+        TweenMax.from('.fifteen', 1, {delay: 2, x: 950})
+        TweenMax.to('.fifteen', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.sixteen', 1, {delay: 2, x: -600})
+        TweenMax.to('.sixteen', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.seventeen', 1, {delay: 2, x: 450})
+        TweenMax.to('.seventeen', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.eighteen', 1, {delay: 2, y: 400})
+        TweenMax.to('.eighteen', 1, {delay: 3, backgroundColor: '#FFFF00'})
+
+        // bottom
+        TweenMax.from('.fourteen', 1, {delay: 2, y: 400})
+        TweenMax.to('.fourteen', 1, {delay: 3, backgroundColor: '#0000FF'})
+
+        TweenMax.from('.nineteen', 1, {delay: 2, x: -300})
+        TweenMax.to('.nineteen', 1, {delay: 3, backgroundColor: '#FFFF00'})
+
+        TweenMax.from('.twenty', 1, {delay: 2, y: 200})
+        TweenMax.to('.twenty', 1, {delay: 3, backgroundColor: '#FFFFFF'})
+
+        TweenMax.from('.twenty-one', 1, {delay: 2, y: -750})
+        TweenMax.to('.twenty-one', 1, {delay: 3, backgroundColor: '#0000FF'})
+
+        TweenMax.from('.twenty-two', 1, {delay: 2, y: 200})
+        TweenMax.to('.twenty-two', 1, {delay: 3, backgroundColor: '#FFFF00'})
+      }
+
+    </script>
+  </body>
+
+</html>
