@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aesop Menu</title>
+
+    <style>
+
+      :root {
+        --main-color: #222;
+        --bg-color: rgb(255, 217, 164);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+
+        color: var(--main-color);
+        background-color: var(--bg-color);
+      }
+
+      .nav-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 50px;
+
+        border: 10px solid var(--main-color);
+      }
+
+      .logo {
+        font-size: 2em;
+        position: absolute;
+      }
+
+      .arrow {
+        margin: 0;
+        padding: .75em 0;
+
+        position: absolute;
+
+        visibility: hidden;
+        opacity: 0;
+
+        border: 0;
+        background: none;
+      }
+      
+      .menu {
+        position: relative;
+        top: 50px;
+      }
+
+      .menu a,
+      .menu a:link {
+        display: inline-block;
+
+        font-size: 2em;
+        text-decoration: none;
+        color: var(--main-color);
+      }
+
+      .menu ul {
+        padding: 0;
+        margin: 0;
+
+        list-style: none;
+      }
+
+      .sub-menu {
+        position: absolute;
+        top: 0;
+
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      
+      .sub-menu a {
+        opacity: 0;
+        transform: translateX(10%);
+      }
+
+      .sub-menu-show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .sub-menu-hide {
+        display: none;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="nav-container">
+
+      <a href="#" class="logo" id="logo">Logo</a>
+      <button id="backBtn" class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </button>
+
+      <nav class="menu">
+        <ul id="mainMenu">
+          <li class="menu-items">
+            <a id="menuLink" href="#" class="menu-link">Shop</a>
+            <!-- shop sub-menu -->
+            <ul id="subMenu" class="sub-menu sub-menu-hide">
+              <li class="menu-items"><a href="#" class="menu-link">Sorem</a></li>
+              <li class="menu-items"><a href="#" class="menu-link">Deleniti</a></li>
+              <li class="menu-items"><a href="#" class="menu-link">Ex</a></li>
+              <li class="menu-items"><a href="#" class="menu-link">Impedit</a></li>
+              <li class="menu-items"><a href="#" class="menu-link">Unde</a></li>
+              <li class="menu-items"><a href="#" class="menu-link">Nihil</a></li>
+            </ul>
+
+          </li>
+          <li class="menu-items">
+            <a href="#" class="menu-link">Read</a>
+            <!-- read sub-menu -->
+            <ul class="sub-menu">
+                <li class="menu-items"><a href="#" class="menu-link">Rorem</a></li>
+                <li class="menu-items"><a href="#" class="menu-link">Deleniti</a></li>
+                <li class="menu-items"><a href="#" class="menu-link">Ex</a></li>
+                <li class="menu-items"><a href="#" class="menu-link">Impedit</a></li>
+                <li class="menu-items"><a href="#" class="menu-link">Unde</a></li>
+                <li class="menu-items"><a href="#" class="menu-link">Nihil</a></li>
+              </ul>
+          </li>
+          <li class="menu-items"><a href="#" class="menu-link">Visit</a></li>
+          <li class="menu-items"><a href="#" class="menu-link">Search</a></li>
+          <li class="menu-items"><a href="#" class="menu-link">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- 
+    Emmets
+    nav.menu>ul>li.menu-items*5>a.menu-link 
+    ul.submenu>li.menu-items*6>a.menu-link>lorem1 
+    -->
+    
+    <script src="TweenMax.js"></script>
+    <script>
+
+      // declare variables
+      var menuLink = document.getElementById('menuLink');
+      var subMenu = document.getElementById('subMenu');
+      var mainMenu = document.getElementById('mainMenu');
+      var backBtn = document.getElementById('backBtn');
+
+      // attach event listeners
+      menuLink.addEventListener('click', clickedMenuLink);
+      backBtn.addEventListener('click', clickedBackBtn);
+
+      // functions
+      function clickedMenuLink(event) {
+
+        // prevents the default behaviour of the link
+        event.preventDefault();
+        // console.log(event);
+        // subMenu.style.setProperty('transform', 'translate(0)');
+        subMenu.classList.add('sub-menu-show');
+        mainMenu.classList.add('menu-hide');
+
+        // gsap
+        // hide the main menu links
+        TweenMax.to('#mainMenu > li > a', .3, {autoAlpha: 0, x: -100}, 0);
+        // show the sub menu links
+        TweenMax.staggerTo('#subMenu > li > a', .3, {autoAlpha: 1, x: 0, delay: .3}, .1);
+        // show the back arrow using autoAlpha that
+        // animates opacity and visibility
+        TweenMax.to('#backBtn', .3, {autoAlpha: 1});
+        // and hide the logo
+        TweenMax.to('#logo', .3, {autoAlpha: 0, onComplete: showHideSubMenu});
+      }
+      
+      function clickedBackBtn(event) {
+        TweenMax.staggerTo('#mainMenu > li > a', .3, {autoAlpha: 1, x: 0, delay: .3}, .1);
+        TweenMax.staggerTo('#subMenu > li > a', .3, {autoAlpha: 0, x: 100}, .1);
+
+        TweenMax.to('#backBtn', .3, {autoAlpha: 0});
+        TweenMax.to('#logo', .3, {autoAlpha: 1, onComplete: showHideSubMenu});
+      }
+
+      function showHideSubMenu() {
+        console.log('showHide');
+        subMenu.classList.toggle('sub-menu-hide');
+      }
+    
+    </script>
+  </body>
+</html>
