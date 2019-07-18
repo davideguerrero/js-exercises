@@ -14,8 +14,10 @@
       }
 
       body {
-        margin: 0;
+        display: flex;
+        justify-content: center;
         font-family: sans-serif;
+        margin: 0;
       }
       
       #container {
@@ -25,7 +27,7 @@
         height: 667px;
         
         background-color: #FFFEF1;
-        border: 1px solid red;
+        border: 1px solid #000;
         overflow: hidden;
       }
 
@@ -61,7 +63,6 @@
         margin-top: -47px;
         width: 375px;
         height: 667px;
-        border: 1px solid red;
 
         transform: translateX(363px);
         transition: transform .25s ease-in-out
@@ -71,10 +72,15 @@
         transform: translateX(-11px);
       }
 
+      #shopSubMenu,
+      #readSubMenu {
+        display: none;
+      }
+
       #cartPop {
         position: fixed;
-        left: 0;
         top: 0;
+        margin-left: -11px;
         width: 375px;
         padding: 10px;
         background-color: grey;
@@ -98,9 +104,10 @@
 
       #signIn {
         position: fixed;
+        bottom: 0;
         text-transform: capitalize;
         font-size: 1em;
-        margin-top: 40px;
+        margin-bottom: 10px;
       }
 
     </style>

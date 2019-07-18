@@ -7,34 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Encalada Sunrise Animated</title>
+    <title>Encalada Sunset Animated</title>
 
   </head>
 
   <body>
 
-    <div class="container">
+    <div id="container">
 
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
         <style type="text/css">
           .st0{fill:url(#SVGID_1_);}
           .st1{fill:#FABE4E;}
-          .st2{fill:#431C31;}
+          .st2{fill:url(#SVGID_3_);}
           .st3{fill:#CE1E1E;}
           .st4{fill:#CC2121;}
           .st5{fill:#1D0A1E;}
           .st6{fill:#F5A100;}
+          .st7{fill:url(#SVGID_2_);}
+          .st8{fill:#431C31;}
         </style>
         <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="375" y1="-0.1102" x2="375" y2="499.8898" gradientTransform="matrix(1 0 0 -1 0 499.8898)">
           <stop  offset="0" style="stop-color:#F1AB3C"/>
           <stop  offset="1" style="stop-color:#E54717"/>
         </linearGradient>
+        <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="375" y1="-0.1102" x2="375" y2="499.8898" gradientTransform="matrix(1 0 0 -1 0 499.8898)">
+          <stop  offset="0" style="stop-color:#808080"/>
+          <stop  offset="1" style="stop-color:#000000"/>
+        </linearGradient>
+        <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="375" y1="-0.1102" x2="375" y2="499.8898" gradientTransform="matrix(1 0 0 -1 0 499.8898)">
+          <stop  offset="0" style="stop-color:#431C31"/>
+          <stop  offset="1" style="stop-color:#0000FF"/>
+        </linearGradient>
 
+        <rect id="bg_02" y="0" class="st7" width="750" height="500"/>
         <rect id="bg" y="0" class="st0" width="750" height="500"/>
         <circle id="sun" class="st1" cx="375.5" cy="350.5" r="87.5"/>
+        <rect id="water_02" y="351" class="st7" width="750" height="150"/>
         <rect id="water" y="351" class="st2" width="750" height="150"/>
-        <rect id="ground_reflect" y="351" class="st2" width="750" height="3.5"/>
+        <rect id="ground_reflect" y="351" class="st8" width="750" height="3.5"/>
         <polygon id="mountain_left" class="st3" points="0,351 0,226 45,181 143,279 179.5,242.5 326,351 "/>
         <polygon id="mountain_right" class="st3" points="750,351 750,226 705,181 607,279 570.5,242.5 424,351 "/>
         <polygon id="mountain_left_shadow" class="st4" points="0,226 45,181 143,279 179.5,242.5 326,351 179.8,254.1 143,289.9 45,192.9 "/>
@@ -60,50 +72,54 @@
         <path id="water_reflect_02" class="st1" d="M480.5,383h-210c-1.9,0-3.5-1.6-3.5-3.5l0,0c0-1.9,1.6-3.5,3.5-3.5h210c1.9,0,3.5,1.6,3.5,3.5l0,0
           C484,381.4,482.4,383,480.5,383z"/>
       </svg>
-     
+      
+      <div id="btns">
+        <button id="playBtn">&#9654;</button>
+        <button id="pauseBtn">&#10073; &#10073;</button>
+        <button id="rePlayBtn">◀◀</button>
+      </div>
     </div>
     
     <script>
-      const bg = document.getElementById('bg');
-      const sun = document.getElementById('sun');
-      const mountainLeft = document.getElementById('mountain_left');
-      const mountainLeftShadow = document.getElementById('mountain_left_shadow');
-      const mountainRight = document.getElementById('mountain_right');
-      const mountainRightShadow = document.getElementById('mountain_right_shadow');
-      const treeLeft = document.getElementById('tree_left');
-      const treeLeftShadow = document.getElementById('tree_left_shadow');
-      const treeRight = document.getElementById('tree_right');
-      const treeRightShadow = document.getElementById('tree_right_shadow');
-      const groundReflect = document.getElementById('ground_reflect');
-      const water = document.getElementById('water');
-      const waterReflect01 = document.getElementById('water_reflect_01');
-      const waterReflect02 = document.getElementById('water_reflect_02');
-      const cloudLeft = document.getElementById('cloud_left');
-      const cloudLeftShadow = document.getElementById('.cloud_left_shadow');
-      const cloudRight = document.getElementById('cloud_right');
-      const cloudRightShadow = document.getElementById('cloud_right_shadow');
+      const playAnimation = document.getElementById('playBtn');
+      const pauseAnimation = document.getElementById('pauseBtn');
+      const rePlayAnimation = document.getElementById('rePlayBtn');
       
-      bg.addEventListener('mouseover', bgDay);
+      playAnimation.addEventListener('click', playSunSet);
 
-      function bgDay() {
-        TweenMax.to('#bg', 30, {fill: '#808080'})
+      function playSunSet() {
+        TweenMax.to('#bg', 30, {opacity: 0})
+        TweenMax.to('#bg_02', 30, {opacity: 100})
         TweenMax.to('#sun', 30, {y: -200, scale: .5, fill: '#FFFFFF'})
-        TweenMax.to('#mountain_left', 25, {fill: '#000000'})
+        TweenMax.to('#mountain_left', 20, {fill: '#000000'})
         TweenMax.to('#mountain_left_shadow', 20, {fill: '#FFFFFF'})
-        TweenMax.to('#mountain_right', 25, {fill: '#000000'})
+        TweenMax.to('#mountain_right', 20, {fill: '#000000'})
         TweenMax.to('#mountain_right_shadow', 20, {fill: '#FFFFFF'})
         TweenMax.to('#tree_left', 25, {fill: '#CCCCCC'})
         TweenMax.to('#tree_left_shadow', 20, {fill: '#FFFFFF'})
         TweenMax.to('#tree_right', 25, {fill: '#CCCCCC'})
         TweenMax.to('#tree_right_shadow', 20, {fill: '#FFFFFF'})
         TweenMax.to('#ground_reflect', 20, {fill: '#FFFFFF'})
-        TweenMax.to('#water', 20, {fill: '#00002D'})
+        TweenMax.to('#water', 20, {opacity: 0})
+        TweenMax.to('#water_02', 20, {opacity: 100})
         TweenMax.to('#water_reflect_01', 15, {y: 25, fill: '#CCCCCC'})
         TweenMax.to('#water_reflect_02', 15, {y: -5, fill: '#F2F2F2'})
         TweenMax.to('#cloud_left', 20, {x: 500, y: 25, fill: '#4D4D4D'})
-        TweenMax.to('#cloud_left_shadow', 20, {x: 485, y: 25, fill: '#FFFFFF'})
+        TweenMax.to('#cloud_left_shadow', 20, {x: 490, y: 25, fill: '#FFFFFF'})
         TweenMax.to('#cloud_right', 20, {x: -400, y: 25, scale: .75, fill: '#4D4D4D'})
-        TweenMax.to('#cloud_right_shadow', 20, {x: -385, y: 25, scale: .75, fill: '#FFFFFF'})
+        TweenMax.to('#cloud_right_shadow', 20, {x: -390, y: 25, scale: .75, fill: '#FFFFFF'})
+      }
+
+      pauseAnimation.addEventListener('click', pauseSunSet);
+
+      function pauseSunSet() {
+        TweenMax.pauseAll();
+      }
+
+      rePlayAnimation.addEventListener('click', stopSunSet);
+
+      function stopSunSet() {
+        TweenMax.set('#bg, #sun, #mountain_left, #mountain_left_shadow, #mountain_right, #mountain_right_shadow, #tree_left, #tree_left_shadow, #tree_right, #tree_right_shadow, #ground_reflect, #water, #water_reflect_01, #water_reflect_02, #cloud_left, #cloud_left_shadow, #cloud_right, #cloud_right_shadow', {clearProps:'all'});
       }
 
     </script>
