@@ -21,7 +21,7 @@ header {
   grid-column: 1/5;
   grid-row: 1/2;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 130px 1fr 1fr;
   grid-template-rows: 2em 4em 3em;
 }
 
@@ -31,28 +31,28 @@ a {
   font-weight: lighter;
 }
 
-#openMenu {
+.openMenu {
   position: absolute;
   top: 0;
   right: 0;
   margin: 10px;
+  background-color: none;
+  border: none;
 }
 
-#logo,
-h1 {
+.logo {
   grid-column: 3/4;
   grid-row: 2/3;
-}
-
-#logo {
-  margin-left: 50px; 
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
 h1 {
-  margin: 30px 0 41px 0;
+  margin: 5px 0 40px 0;
 }
 
-#displayGrid {
+.displayGrid {
   grid-column: 5/6;
   grid-row: 3/4;
   background-color: var(--main-color);
@@ -62,18 +62,21 @@ h1 {
   max-width: 50px;
 }
 
-#displayGrid svg {
+.displayGrid svg {
   stroke: white;
 }
 
-#displayList {
+.displayList {
   grid-column: 5/6;
   grid-row: 3/4;
   background-color: var(--secondary-color);
   border-radius: 5px;
-  margin-left: 10px;
-  margin-top: 20px;
+  margin: 20px 0 0 10px;
   max-width: 50px;
+}
+
+.gridPhoto {
+  margin-top: 25px;
 }
 
 nav {
@@ -90,14 +93,16 @@ nav {
   transform: translateY(-100%);
 }
 
-#closeMenu {
-position: absolute;
-top: 0;
-right: 0;
-margin: 10px;
+.closeMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background-color: var(--main-color);
+  border: none;
 }
 
-#optionMenu {
+.optionMenu {
   grid-column: 2/3;
   grid-row: 3/4;
   display: flex;
@@ -106,13 +111,13 @@ margin: 10px;
   align-items: center;
 }
 
-#optionMenu a {
+.optionMenu a {
   margin: 10px 0;
   font-size: 1.5em;
   color: #FFFFFF;
 }
 
-#socialicon {
+.socialicon {
   grid-column: 2/3;
   grid-row: 5/6;
   display: flex;
@@ -120,11 +125,11 @@ margin: 10px;
   align-items: center;
 }
 
-#socialicon a {
+.socialicon a {
   margin: 0 10px;
 }
 
-#socialicon a svg {
+.socialicon a svg {
   stroke: #FFFFFF;
 }
 main {
@@ -133,12 +138,12 @@ main {
   grid-template-columns: repeat(2, 1fr);
 }
 
-#photoGrid {
+.photoGrid {
   margin-top: 25px; 
   grid-column: 1/5;
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 article img {
@@ -146,7 +151,7 @@ article img {
   height: auto;
 }
 
-#arrow {
+.arrow {
   display: none;
 }
 
