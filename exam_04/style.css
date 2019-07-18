@@ -1,0 +1,159 @@
+:root {
+  --main-color: #222222;
+  --secondary-color: #EDEDED;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+header {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 2em 4em 3em;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+#openMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+#logo,
+h1 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+#logo {
+  margin-left: 50px; 
+}
+
+h1 {
+  margin: 30px 0 41px 0;
+}
+
+#displayGrid {
+  grid-column: 5/6;
+  grid-row: 3/4;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: -50px;
+  max-width: 50px;
+}
+
+#displayGrid svg {
+  stroke: white;
+}
+
+#displayList {
+  grid-column: 5/6;
+  grid-row: 3/4;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 20px;
+  max-width: 50px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2em 15em 5em 10em 2em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #FFFFFF;
+  background-color: var(--main-color);
+  transform: translateY(-100%);
+}
+
+#closeMenu {
+position: absolute;
+top: 0;
+right: 0;
+margin: 10px;
+}
+
+#optionMenu {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#optionMenu a {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #FFFFFF;
+}
+
+#socialicon {
+  grid-column: 2/3;
+  grid-row: 5/6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#socialicon a {
+  margin: 0 10px;
+}
+
+#socialicon a svg {
+  stroke: #FFFFFF;
+}
+main {
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#photoGrid {
+  margin-top: 25px; 
+  grid-column: 1/5;
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+}
+
+#arrow {
+  display: none;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+p {
+  margin-top: 0;
+}

@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+/* GENERAL */
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+header {
+  margin: 5px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  
+}
+
+#contentContainer {
+  padding: 10px;
+  margin: 0 auto;
+  
+
+  /* border: 1px solid black; */
+}
+
+/* ELEMENTS */
+
+/* header */
+
+#logoTitle {
+  margin-bottom: 50px;
+
+  grid-column: 2/3;
+
+  text-align: center;
+}
+
+#logoTitle h1 {
+  margin: 0;
+  margin-top: 5px;
+
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2em;
+}
+
+#hamburgerMenu {
+  grid-column: 3/4;
+
+  border: none;
+
+  background-color: transparent;
+}
+
+/* toggle view buttons */
+
+#toggleView {
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#toggleGrid, #toggleList {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#toggleGrid {
+  order: 1;
+  
+  background-color: black;
+}
+
+#gridIcon {
+  stroke: white;
+}
+
+#toggleList {
+  background-color: #EDEDED;
+}
+
+/* Grid view gallery */
+
+.grid-container {
+  margin: 5px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+}
+
+.articles {
+  text-align: left;
+}
+
+.articles h2 {
+  margin: 0;
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.articles p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.grid-img {
+  width: 100%;
+}
+
+.arrow {
+  margin-left: 50%;
+
+  display: none;
+
+  transform: rotate(180deg);
+}
+
+/* list view gallery */
+
+.list-articles {
+  padding: 10px 0;
+
+  display: flex;
+
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.list-articles img {
+  width: 30%;
+  align-self: flex-start;
+}
+
+#textFlex {
+  margin-left: 10px;
+}
+
+/* menu */
+
+#hiddenMenu {
+  margin: 5px auto;
+  
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: #222222;
+  color: white;
+  text-align: center;
+
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition: transform .8s ease, opacity .5s ease;
+  z-index: 1;
+}
+
+#hiddenMenu ul {
+  margin: 200px auto;
+  list-style-type: none;
+}
+
+#hiddenMenu li {
+  margin: 30px;
+
+  transform: translateX(100%);
+  transition: transform 1s ease;
+
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
+#arrow {
+  float: left;
+  margin: 15px 5px;
+
+  background-color: #222222;
+  border: none;
+}
+
+.arrow-menu {
+  stroke: white;
+}
