@@ -15,11 +15,11 @@ function hideOpenMenu() {
 
 function showListView() {
   var showList = document.getElementById('photoGrid');
-  showList.classList.remove('photoGrid');
-  showList.classList.add('gridPhoto');
+  showList.classList.remove('gridPhoto');
+  showList.classList.add('photoGrid');
 }
 
 function showGridView() {
   var showGrid = document.getElementById('photoGrid');
-  showGrid.classList.add('photoGrid');
+  showGrid.classList.add('gridPhoto');
 }

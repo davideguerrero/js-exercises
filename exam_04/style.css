@@ -1,6 +1,7 @@
 :root {
   --main-color: #222222;
   --secondary-color: #EDEDED;
+  --hover-color: rgb(143, 143, 143);
 }
 
 * {
@@ -75,7 +76,7 @@ h1 {
   max-width: 50px;
 }
 
-.gridPhoto {
+.photoGrid {
   margin-top: 25px;
 }
 
@@ -138,7 +139,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.photoGrid {
+.gridPhoto {
   margin-top: 25px; 
   grid-column: 1/5;
   display: grid;
@@ -161,4 +162,9 @@ h2 {
 
 p {
   margin-top: 0;
+}
+
+a:hover,
+.feather:hover {
+  stroke: var(--hover-color);
 }
