@@ -26,12 +26,6 @@ header {
   grid-template-rows: 2em 4em 3em;
 }
 
-a {
-  color: var(--main-color);
-  text-decoration: none;
-  font-weight: lighter;
-}
-
 .openMenu {
   position: absolute;
   top: 0;
@@ -64,7 +58,7 @@ h1 {
 }
 
 .displayGrid svg {
-  stroke: white;
+  stroke: var(--secondary-color);
 }
 
 .displayList {
@@ -76,8 +70,25 @@ h1 {
   max-width: 50px;
 }
 
-.photoGrid {
+.photoList {
   margin-top: 25px;
+}
+
+.line {
+  width: 200%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--secondary-color); 
+}
+
+.arrow {
+  transform: rotate(180deg);
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+.gridPhoto .arrow,
+.gridPhoto .line {
+  display: none;
 }
 
 nav {
@@ -89,9 +100,23 @@ nav {
   bottom: 0;
   right: 0;
   left: 0;
-  color: #FFFFFF;
+  color: var(--secondary-color);
   background-color: var(--main-color);
   transform: translateY(-100%);
+}
+
+li {
+  list-style: none;
+}
+
+.optionMenu li {
+  margin: 10px 0;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: lighter;
 }
 
 .closeMenu {
@@ -113,12 +138,19 @@ nav {
 }
 
 .optionMenu a {
-  margin: 10px 0;
   font-size: 1.5em;
-  color: #FFFFFF;
+  color: var(--secondary-color);
 }
 
-.socialicon {
+.optionMenu ul {
+  padding: 0;
+}
+
+.optionMenu li {
+  text-align: center;
+}
+
+.socialIcon {
   grid-column: 2/3;
   grid-row: 5/6;
   display: flex;
@@ -126,13 +158,18 @@ nav {
   align-items: center;
 }
 
-.socialicon a {
+.socialIcon li {
+  display: inline;
+}
+
+.socialIcon a {
   margin: 0 10px;
 }
 
-.socialicon a svg {
-  stroke: #FFFFFF;
+.socialIcon a svg {
+  stroke: var(--secondary-color);
 }
+
 main {
   grid-column: 1/5;
   display: grid;
@@ -152,10 +189,6 @@ article img {
   height: auto;
 }
 
-.arrow {
-  display: none;
-}
-
 h2 {
   margin-bottom: 5px;
 }
@@ -164,7 +197,55 @@ p {
   margin-top: 0;
 }
 
+.list-article {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  
+  display: flex;
+}
+
+.author {
+  margin-left: 10px;
+}
+
+.list-article .author h2 {
+  margin-top: 0;
+}
+
+.btnGridOff {
+  grid-column: 5/6;
+  grid-row: 3/4;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: -50px;
+  max-width: 50px;
+}
+
+.btnGridOff svg {
+  stroke: var(--main-color);
+}
+
+.btnListOn {
+  grid-column: 5/6;
+  grid-row: 3/4;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  margin: 20px 0 0 10px;
+  max-width: 50px;
+}
+
+.btnListOn .feather {
+  stroke: var(--secondary-color);
+}
+
 a:hover,
-.feather:hover {
+.feather:hover,
+.arrow:hover {
+  color: var(--hover-color);
   stroke: var(--hover-color);
+}
+
+.logo .feather:hover {
+  stroke: var(--main-color);
 }
